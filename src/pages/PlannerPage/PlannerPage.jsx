@@ -101,7 +101,7 @@ function PlannerPage() {
     if (isFormValid()) {
       createCalendarEvent();
     } else {
-      setNotification("Please fill out all required fields.");
+      setNotification("Please insert valid input.");
     }
   };
 
@@ -127,7 +127,7 @@ function PlannerPage() {
                     placeholder="Pill name"
                     value={eventName}
                     onChange={(e) => setEventName(e.target.value)}
-                    autocomplete="off"
+                    autoComplete="off"
                     required
                   />
                 </div>
@@ -140,7 +140,7 @@ function PlannerPage() {
                   placeholder="Description"
                   value={eventDescription}
                   onChange={(e) => setEventDescription(e.target.value)}
-                  autocomplete="off"
+                  autoComplete="off"
                   required
                 />
               </div>
@@ -152,7 +152,7 @@ function PlannerPage() {
                   placeholder="Duration (number > 7)"
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
-                  autocomplete="off"
+                  autoComplete="off"
                   required
                 />
               </div>
@@ -164,7 +164,7 @@ function PlannerPage() {
                   placeholder="Dosage per day (number)"
                   value={dosage}
                   onChange={(e) => setDosage(e.target.value)}
-                  autocomplete="off"
+                  autoComplete="off"
                   required
                 />
               </div>

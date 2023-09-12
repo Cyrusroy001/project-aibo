@@ -3,7 +3,6 @@ import Event from "../Event/Event";
 import "./Events.css";
 
 import { useSession, useSessionContext } from "@supabase/auth-helpers-react";
-import HomePage from "../../pages/HomePage/HomePage";
 
 function Events() {
   const [events, setEvents] = useState([]);
@@ -56,7 +55,7 @@ function Events() {
       <div className="events-header">Upcoming</div>
       <div className="event-list">
         {events.length > 0 ? (
-          events.map((e, index) => <Event event={e} />)
+          events.map((e, index) => <Event key={index} event={e} />)
         ) : (
           <span className="empty-list">
             nothing to see here,

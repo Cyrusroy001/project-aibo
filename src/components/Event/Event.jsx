@@ -1,15 +1,24 @@
-import React, {useState} from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import setProgress from "../../actions/usericonAction";
 import "./Event.css";
 import { useSession, useSessionContext } from "@supabase/auth-helpers-react";
 import Notification from "../Notification/Notification";
 
 function Event({ event }) {
+  const progress = useSelector((state) => state.progress);
   const [notification, setNotification] = useState(null);
+  // const [progress, setProgress] = useState(
+  //   localStorage.getItem("progress") || "0"
+  // );
   const dispatch = useDispatch();
   const session = useSession(); // tokens
   const { isLoading } = useSessionContext();
+
+  // useEffect(() => {
+  //   console.log("progress: ", progress);
+  //   localStorage.setItem("progress", progress);
+  // }, [progress]);
 
   // no more flickering when we refresh the website
   if (isLoading) {
@@ -23,7 +32,7 @@ function Event({ event }) {
 
   // dynamic changing
   let remainingDays = event.description.split(",")[1];
-  console.log(remainingDays);
+  console.log("remaining days: ", remainingDays);
 
   async function deleteCalendarEvent() {
     const eventId = event.id;
@@ -39,13 +48,15 @@ function Event({ event }) {
     ).then((data) => {
       console.log(data);
       dispatch(setProgress());
+      // setProgress((Number(progress) + 20).toString());
+      // console.log("progress : ", progress);
       setNotification("Calendar event deleted.");
     });
   }
 
   return (
     <div>
-      <div class="card">
+      <div class="event-card">
         <div class="card-header">
           <span>{event.summary}</span>
           <button
@@ -58,7 +69,7 @@ function Event({ event }) {
           </button>
         </div>
         <div class="card-body">
-          {remainingDays + 7}
+          {remainingDays}
           {remainingDays > 1 ? <span> days left</span> : <span> day left</span>}
         </div>
       </div>

@@ -1,4 +1,4 @@
-.card {
+.event-card {
     min-width: 230px;
     border: 2px solid var(--mocha-color);
     border-radius: 7px;
@@ -21,7 +21,7 @@
     font-size: 30px;
 }
 
-.card:hover {
+.event-card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }

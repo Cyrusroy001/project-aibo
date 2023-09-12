@@ -15,6 +15,11 @@ import {
 } from "@supabase/auth-helpers-react";
 
 function HomePage() {
+  // eslint-disable-next-line
+  const [heroUrl, setHeroUrl] = useState(
+    localStorage.getItem("heroUrl") || "/images/aibo.png"
+  );
+
   const [notification, setNotification] = useState(null);
   const session = useSession(); // tokens
   const supabase = useSupabaseClient();
@@ -73,7 +78,7 @@ function HomePage() {
               </Link>
             </div>
             <div className="right">
-              <img src="/images/aibo.png" alt="aibo" />
+              <img src={heroUrl} alt="aibo" />
             </div>
           </div>
         </>

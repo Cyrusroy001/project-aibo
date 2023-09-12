@@ -4,11 +4,12 @@
     width: 100%;
     max-width: 1200px;
     padding: 20px;
+    margin-left: 100px;
 }
 
 .left-column {
     position: absolute;
-    left: 20px;
+    left: 70px;
     width: 25%;
 }
 

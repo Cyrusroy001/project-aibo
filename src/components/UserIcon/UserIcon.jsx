@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserIcon.css";
 import { useSelector } from "react-redux";
 import { useSession, useSessionContext } from "@supabase/auth-helpers-react";
 
 const UserIcon = () => {
   const progress = useSelector((state) => state.progress);
-  const exp = (progress % 100);
-  const level = Math.floor(progress / 100).toString();
+  // const [progress, setProgress] = useState(
+  //   localStorage.getItem("progress") || "0"
+  // );
+  const exp = Number(progress) % 100;
+  const level = Math.floor(Number(progress) / 100).toString();
 
   console.log("progress: " + progress);
   console.log("exp: " + exp);
