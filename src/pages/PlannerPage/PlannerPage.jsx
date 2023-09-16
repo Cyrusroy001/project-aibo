@@ -122,6 +122,7 @@ function PlannerPage() {
                 <div className="form-title">Medicine Reminder</div>
                 <div className="details-picker">
                   <input
+                    className="planner-input"
                     id="pillName"
                     type="text"
                     placeholder="Pill name"
@@ -135,6 +136,7 @@ function PlannerPage() {
 
               <div className="details-picker">
                 <input
+                  className="planner-input"
                   id="eventDesc"
                   type="text"
                   placeholder="Description"
@@ -147,6 +149,7 @@ function PlannerPage() {
 
               <div className="details-picker">
                 <input
+                  className="planner-input"
                   id="duration"
                   type="text"
                   placeholder="Duration (number > 7)"
@@ -159,6 +162,7 @@ function PlannerPage() {
 
               <div className="details-picker">
                 <input
+                  className="planner-input"
                   id="dosage"
                   type="text"
                   placeholder="Dosage per day (number)"

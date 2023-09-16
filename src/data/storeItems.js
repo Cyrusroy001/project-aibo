@@ -1,12 +1,5 @@
 const storeItems = [
   {
-    id: 0,
-    title: "Just Aibo",
-    imageSrc: "/images/aibo.png",
-    levelRequired: 0,
-    isCurrentlyEquipped: false,
-  },
-  {
     id: 1,
     title: "Classy Hat",
     imageSrc: "/images/hat.png",
@@ -36,6 +29,13 @@ const storeItems = [
   },
   {
     id: 5,
+    title: "Item 5",
+    imageSrc: "/images/shades.png",
+    levelRequired: 3,
+    isCurrentlyEquipped: false,
+  },
+  {
+    id: 6,
     title: "Item 5",
     imageSrc: "/images/shades.png",
     levelRequired: 3,

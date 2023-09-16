@@ -52,7 +52,7 @@
     padding: 15px 50px;
     border-radius: 7px;
     font-size: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--soft-shadow);
     overflow: hidden;
     position: relative;
 }

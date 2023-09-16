@@ -1,0 +1,32 @@
+.mood {
+    display: inline-block;
+    margin: 15px;
+    /* Adjust the spacing between Mood components */
+    text-align: center;
+}
+
+.mood-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+
+.green {
+    background-color: green;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+
+.day {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}

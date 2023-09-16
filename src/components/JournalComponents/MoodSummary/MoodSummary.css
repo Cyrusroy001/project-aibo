@@ -1,0 +1,17 @@
+.moods-container {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    align-items: center;
+    text-align: center;
+    top: -9px;
+}
+
+.moods {
+    width: 97%;
+    height: 100%;
+    background-color: var(--cream-color);
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: var(--soft-shadow);
+}

@@ -13,8 +13,7 @@
     border: 2px solid var(--mocha-color);
     border-radius: 7px;
     height: 200px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--soft-shadow);
 }
 
 h1 {
@@ -30,8 +29,7 @@ h1 {
     border: 2px solid var(--mocha-color);
     border-radius: 7px;
     font-size: 20px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--soft-shadow);
     overflow: hidden;
 }
 
