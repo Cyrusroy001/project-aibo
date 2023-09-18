@@ -43,3 +43,42 @@
     bottom: 20px;
     right: 75px;
 }
+
+.tooltip-nav {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-nav .tooltiptext-nav {
+    visibility: hidden;
+    width: 100px;
+    font-size: 16px;
+    background-color: var(--mocha-color);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.tooltip-nav:hover .tooltiptext-nav {
+    visibility: visible;
+}
+
+.tooltip-nav .tooltiptext-nav::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--mocha-color) transparent;
+}

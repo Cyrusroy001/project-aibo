@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./UserIcon.css";
 import { useSelector } from "react-redux";
 import { useSession, useSessionContext } from "@supabase/auth-helpers-react";

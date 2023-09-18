@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import setProgress from "../../actions/usericonAction";
 import "./Event.css";
@@ -7,6 +7,7 @@ import Notification from "../Notification/Notification";
 
 function Event({ event }) {
   const progress = useSelector((state) => state.progress);
+  console.log(progress);
   const [notification, setNotification] = useState(null);
   // const [progress, setProgress] = useState(
   //   localStorage.getItem("progress") || "0"

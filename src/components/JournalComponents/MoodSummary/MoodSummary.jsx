@@ -1,44 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MoodSummary.css";
 import Mood from "../Mood/Mood";
 
-const moods = [
-  {
-    day: "Sunday",
-    mood: 1.7,
-  },
-  {
-    day: "Monday",
-    mood: 6.7,
-  },
-  {
-    day: "Tuesday",
-    mood: 8.9,
-  },
-  {
-    day: "Wednesday",
-    mood: 2.4,
-  },
-  {
-    day: "Thrusday",
-    mood: 3.4,
-  },
-  {
-    day: "Friday",
-    mood: 5,
-  },
-  {
-    day: "Saturday",
-    mood: 9.6,
-  },
-];
+function MoodSummary({notes}) {
+  const [trackerData, setTrackerData] = useState({});
 
-function MoodSummary() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch the JSON file from the public folder
+        const response = await fetch("http://127.0.0.1:5000/read_tracker");
+        const data = await response.json();
+        console.log("data: ", data);
+        setTrackerData(data);
+      } catch (error) {
+        console.error("Error: ", error);
+      }
+    };
+    // Fetch data initially when the component mounts
+    fetchData();
+  }, [notes]);
+
+  const dates = [];
+  const scores = [];
+  for (const key in trackerData) {
+    if (trackerData.hasOwnProperty(key)) {
+      dates.push(key);
+      scores.push(trackerData[key]);
+    }
+  }
+  console.log("dates: ", dates);
+  console.log("scores: ", scores);
+
+    // // Convert JSON object into an array of key-value pairs
+    // const dataArray = Object.entries(trackerData);
+
+    // // Parse the date strings into JavaScript Date objects and sort them
+    // const sortedArray = dataArray
+    //   .map(([dateString, value]) => ({
+    //     date: new Date(dateString),
+    //     value,
+    //   }))
+    //   .sort((a, b) => a.date - b.date);
+    // console.log("daorted: ", sortedArray);
+
   return (
     <div className="moods-container">
       <div className="moods">
-        {moods.map((moodData, index) => (
-          <Mood key={index} day={moodData.day} mood={moodData.mood} />
+        {scores.map((score, index) => (
+          <Mood key={index} date={dates[index]} mood={score} />
         ))}
       </div>
     </div>

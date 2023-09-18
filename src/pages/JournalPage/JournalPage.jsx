@@ -106,7 +106,7 @@ function JournalPage() {
               />
             </div>
             <div className="right-column-jor">
-              <AddNote handleAddNote={addNote} />
+              <AddNote handleAddNote={addNote} notes={notes} />
             </div>
           </div>
         </>

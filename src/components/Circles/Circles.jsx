@@ -9,7 +9,7 @@ function Circles() {
   const currentRoute = useLocation().pathname.toLowerCase();
   return (
     <div className="circle-container">
-      <div className="circle1">
+      <div className="circle1 tooltip-nav">
         <Link
           to="/journal"
           className={
@@ -18,8 +18,9 @@ function Circles() {
         >
           <FaStickyNote className="icon" />
         </Link>
+        <span class="tooltiptext-nav">Notes</span>
       </div>
-      <div className="circle2">
+      <div className="circle2 tooltip-nav">
         <Link
           to="/planner"
           className={
@@ -28,8 +29,9 @@ function Circles() {
         >
           <FaClock className="icon" />
         </Link>
+        <span class="tooltiptext-nav">Planner</span>
       </div>
-      <div className="circle3">
+      <div className="circle3 tooltip-nav">
         <Link
           to="/store"
           className={
@@ -38,6 +40,7 @@ function Circles() {
         >
           <FaShoppingCart className="icon" />
         </Link>
+        <span class="tooltiptext-nav">Store</span>
       </div>
     </div>
   );
