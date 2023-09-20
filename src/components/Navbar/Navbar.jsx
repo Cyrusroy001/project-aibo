@@ -21,6 +21,7 @@ function Navbar() {
     <div>
       <UserIcon />
       <Circles />
+      <span className="helpline">Emergency Helpline: +91 9152987821</span>
     </div>
   );
 }

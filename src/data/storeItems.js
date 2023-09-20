@@ -34,13 +34,6 @@ const storeItems = [
     levelRequired: 3,
     isCurrentlyEquipped: false,
   },
-  {
-    id: 6,
-    title: "Item 5",
-    imageSrc: "/images/shades.png",
-    levelRequired: 3,
-    isCurrentlyEquipped: false,
-  },
 ];
 
 export default storeItems;

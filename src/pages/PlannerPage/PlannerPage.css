@@ -57,6 +57,30 @@
     outline: none;
 }
 
+.whatsapp-details-picker {
+    margin: 7px 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin-top: 15px;
+    border-top: 2px solid var(--mocha-color);
+}
+
+.whatsapp-input {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid var(--mocha-color);
+    border-radius: 7px;
+    font-size: 16px;
+    outline: none;
+    /* margin: 0 auto; */
+}
+
 .submit {
     display: inline-block;
     padding: 10px 20px;

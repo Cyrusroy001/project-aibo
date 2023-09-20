@@ -3,7 +3,7 @@ import { SET_PROGRESS } from "../actionTypes/actionTypes";
 
 // Define your initial state
 const initialState = {
-  progress: 20,
+  progress: 80,
 };
 
 // Define your reducer function
@@ -12,7 +12,7 @@ const usericonReducer = (state = initialState, action) => {
     case "SET_PROGRESS":
       return {
         ...state,
-        progress: state.progress + 20,
+        progress: state.progress + 30,
       };
     default:
       return state;

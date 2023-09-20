@@ -12,7 +12,7 @@
 
 .chat-history {
     padding: 20px;
-    background-color: var(--ge-color);
+    background-color: #dfddd9;
     height: 80%;
     overflow-y: auto;
     display: flex;

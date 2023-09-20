@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./MoodSummary.css";
 import Mood from "../Mood/Mood";
+import json2csv from "json2csv";
+import { BsDownload } from "react-icons/bs";
 
-function MoodSummary({notes}) {
+function MoodSummary({ notes }) {
   const [trackerData, setTrackerData] = useState({});
+  const [doctorData, setDoctorData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,17 +35,33 @@ function MoodSummary({notes}) {
   console.log("dates: ", dates);
   console.log("scores: ", scores);
 
-    // // Convert JSON object into an array of key-value pairs
-    // const dataArray = Object.entries(trackerData);
+  const handleDownload = () => {
+    fetch("/doctorinfo.json")
+      .then((response) => response.json())
+      .then((data) => {
+        // Convert the JSON data to an array of objects
+        const jsonData = Object.entries(data).map(([date, score]) => ({
+          date,
+          score,
+        }));
+        const fields = ["date", "score"];
+        const jsonParser = new json2csv.Parser({ fields });
+        const csvData = jsonParser.parse(jsonData);
+        // Create a Blob containing the CSV data
+        const blob = new Blob([csvData], { type: "text/csv" });
 
-    // // Parse the date strings into JavaScript Date objects and sort them
-    // const sortedArray = dataArray
-    //   .map(([dateString, value]) => ({
-    //     date: new Date(dateString),
-    //     value,
-    //   }))
-    //   .sort((a, b) => a.date - b.date);
-    // console.log("daorted: ", sortedArray);
+        // Create a download link
+        const link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "my_mood_analysis.csv"; //filename
+
+        // Trigger a click event on the link to start the download
+        link.click();
+      })
+      .catch((error) => {
+        console.error("Error fetching doctorinfo.json: ", error);
+      });
+  };
 
   return (
     <div className="moods-container">
@@ -51,6 +70,10 @@ function MoodSummary({notes}) {
           <Mood key={index} date={dates[index]} mood={score} />
         ))}
       </div>
+      <button className="download-button tooltip-csv" onClick={handleDownload}>
+        <BsDownload className="download-icon" />
+        <span class="tooltiptext-csv">Download data</span>
+      </button>
     </div>
   );
 }
