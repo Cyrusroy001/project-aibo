@@ -11,18 +11,30 @@
     border-radius: 50%;
     margin-bottom: 7px;
     margin-top: 10px;
+    border: 2px solid var(--mocha-color);
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; */
+    /* padding: 10px; */
+}
+
+.mood-image {
+    width: 50px;
+    height: auto;
+    margin-top: 15px;
 }
 
 .green {
-    background-color: green;
+    background-color: rgb(72, 196, 72);
 }
 
 .orange {
-    background-color: orange;
+    background-color: rgb(241, 181, 71);
 }
 
 .red {
-    background-color: red;
+    background-color: rgb(231, 68, 68);
 }
 
 .day {
